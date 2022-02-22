@@ -6,7 +6,7 @@
 
 .title__box {
   width: 328px;
-  height: 80px;
+  height: 36px;
 }
 
 .title {
@@ -38,6 +38,7 @@
   border: 1px solid #e2e2e2;
   border-radius: 4px;
   margin: auto;
+  text-align: center;
 }
 
 .finish {

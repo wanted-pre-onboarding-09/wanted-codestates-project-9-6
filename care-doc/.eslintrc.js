@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   rules: {
+    'react/prop-types': 'off',
     'comma-dangle': 'off',
     semi: 'off',
     'space-before-function-paren': 'off',

@@ -1,33 +1,39 @@
 import React, { useEffect } from 'react';
+import styles from '../css/Care.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { nextStep, clearStep } from '../store/pageStep';
+import { clearStep } from '../store/pageStep';
+import Footer1 from './Footer1';
+import Title from './Title';
+import Category from './Category';
 
 const Care = () => {
   const { currentStep } = useSelector(({ pageStep }) => pageStep);
   const dispatch = useDispatch();
-  const onClick = () => {
-    dispatch(nextStep(currentStep));
-  };
-
   useEffect(() => dispatch(clearStep()), []);
+
   const renderPageStep = (pageNumber) => {
     switch (pageNumber) {
       case 1:
-        return <div>component 1</div>;
+        return <Category />;
       case 2:
         return <div>component 2</div>;
       case 3:
         return <div>component 3</div>;
       default:
-        return <div>4이상임</div>;
+        return <div>4 이상임</div>;
     }
   };
 
   return (
-    <>
+    <main className={styles.careWrapper}>
+      <div className={styles.pagination}>
+        돌봄 유형 <span>{currentStep}</span>
+        <span> / 4</span>
+      </div>
+      <Title text="돌봄 유형을 설정해주세요" />
       {renderPageStep(currentStep)}
-      <div onClick={onClick}>page 이동</div>
-    </>
+      <Footer1 />
+    </main>
   );
 };
 export default Care;

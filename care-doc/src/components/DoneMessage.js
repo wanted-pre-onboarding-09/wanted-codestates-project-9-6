@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from '../css/DoneMessage.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const DoneMessage = (props) => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.last__box}>
       <div className={styles.title__box}>
@@ -16,7 +19,8 @@ const DoneMessage = (props) => {
         </p>
         <p className={styles.content}>케어코디님의 지원 알림을 기다려주세요!</p>
       </div>
-      <button className={styles.finish__btn}>
+
+      <button className={styles.finish__btn} onClick={() => navigate('/')}>
         <span className={styles.finish}>끝내기</span>
       </button>
     </div>

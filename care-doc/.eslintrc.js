@@ -26,5 +26,6 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'multiline-ternary': 'off',
   },
 };

@@ -4,11 +4,26 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import pageStepReducer from './store/pageStep';
+import staticDataReducer from './store/staticData';
+
+const reducers = combineReducers({
+  pageStep: pageStepReducer,
+  static: staticDataReducer,
+});
+
+const store = configureStore({
+  reducer: reducers,
+});
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root'),
 );
 

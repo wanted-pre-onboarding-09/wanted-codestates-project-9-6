@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const Footer = ({ disabled }) => {
   const nextBtnType = disabled ? styles.next__btn__disabled : styles.next__btn;
   const nextType = disabled ? styles.next__disabled : styles.next;
+
   return (
     <footer className={styles.footer}>
       <button className={styles.prev__btn}>
@@ -18,7 +19,7 @@ const Footer = ({ disabled }) => {
 };
 
 Footer.propTypes = {
-  disabled: PropTypes.boolean,
+  disabled: PropTypes.bool.isRequired,
 };
 
 export default Footer;

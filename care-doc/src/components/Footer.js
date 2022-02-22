@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../css/Footer.module.css';
+import PropTypes from 'prop-types';
 
 const Footer = ({ disabled }) => {
   const nextBtnType = disabled ? styles.next__btn__disabled : styles.next__btn;
@@ -15,4 +16,9 @@ const Footer = ({ disabled }) => {
     </footer>
   );
 };
+
+Footer.propTypes = {
+  disabled: PropTypes.boolean,
+};
+
 export default Footer;

@@ -1,0 +1,32 @@
+.HomeWrapper {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.HomeWrapper div {
+  text-align: center;
+}
+.HomeWrapper h4,
+.HomeWrapper h5 {
+  font-size: 32px;
+}
+.HomeWrapper h4 {
+  color: #ff8450;
+}
+.HomeWrapper h5 {
+  color: #5b5555;
+  font-weight: 400;
+}
+
+.HomeWrapper button {
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 25px;
+  background-color: #ff8450;
+  margin-top: 30px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 700;
+}

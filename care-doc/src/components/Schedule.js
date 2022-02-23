@@ -6,9 +6,12 @@ import TimeTable from './modal/TimeTable';
 
 const Schedule = () => {
   const [show, setShow] = useState(false);
+  const [date, setDate] = useState(false);
   const modalOpen = () => {
-    console.log('hi');
-    setShow(true);
+    setShow(!show);
+  };
+  const dateOpen = () => {
+    setDate(!date);
   };
 
   return (
@@ -32,18 +35,18 @@ const Schedule = () => {
         </div>
 
         <div className={styles.timeTitle}>돌봄 시작시간</div>
-        <div className={styles.time} onClick={modalOpen}>
+        <button className={styles.time} onClick={modalOpen}>
           <div className={styles.selectTime}>선택</div>
           <img src={ArrowImg} />
-        </div>
+        </button>
 
         <div className={styles.timeTitle}>하루 돌봄시간</div>
-        <div className={styles.time}>
+        <button className={styles.time} onClick={dateOpen}>
           <div className={styles.selectTime}>선택</div>
           <img src={ArrowImg} />
-        </div>
+        </button>
       </div>
-      <TimeTable open={show} />
+      <TimeTable show={show} setShow={setShow} />
     </section>
   );
 };

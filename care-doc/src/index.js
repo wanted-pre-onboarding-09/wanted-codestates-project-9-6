@@ -10,8 +10,10 @@ import pageStepReducer from './store/pageStep';
 import addressReducer from './store/addressSlice';
 import careTypeReducer from './store/careType';
 import phoneReducer from './store/phoneNumber';
+import hourReducer from './store/hourSlice';
 
 const reducers = combineReducers({
+  hours: hourReducer,
   addresses: addressReducer,
   pageStep: pageStepReducer,
   careType: careTypeReducer,

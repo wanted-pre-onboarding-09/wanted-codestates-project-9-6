@@ -8,9 +8,8 @@ import AddressItem from './AddressItem';
 
 const AddressList = ({ keyword, setInputs, toggleFocus }) => {
   const { addresses } = useSelector((addresses) => addresses);
-  console.log(addresses);
+
   const selectAddress = (address) => {
-    console.log(address);
     setInputs((prev) => ({ ...prev, mainAddress: address }));
     toggleFocus();
   };

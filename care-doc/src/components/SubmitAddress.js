@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Style from './css/SubmitAddress.module.css';
+import Style from '../css/SubmitAddress.module.css';
 import { AiOutlineSearch } from 'react-icons/ai';
 
 import ModalPortal from './modal/ModalPortal';

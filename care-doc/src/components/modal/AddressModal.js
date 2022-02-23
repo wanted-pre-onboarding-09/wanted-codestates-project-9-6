@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
@@ -14,9 +14,9 @@ const AddressModal = ({ onClose, setInputs, toggleFocus }) => {
   const [isSearching, setIsSearching] = useState(false);
   const [keyword, setKeyword] = useState('');
 
-  console.log(isSearching);
-
-  const onChange = (e) => setKeyword(e.target.value);
+  const onChange = (e) => {
+    setKeyword(e.target.value);
+  };
 
   const onSearch = async (e) => {
     if (e.key !== 'Enter') return;
@@ -25,6 +25,10 @@ const AddressModal = ({ onClose, setInputs, toggleFocus }) => {
 
     setIsSearching(true);
   };
+
+  useEffect(() => {
+    if (keyword === '') setIsSearching(false);
+  }, [keyword]);
 
   return (
     <div className={styles.ModalContainer}>

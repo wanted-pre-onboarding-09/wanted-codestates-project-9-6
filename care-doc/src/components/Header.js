@@ -18,7 +18,7 @@ const Header = ({ displayNone }) => {
 };
 
 Header.propTypes = {
-  displayNone: PropTypes.bool,
+  displayNone: PropTypes.bool.isRequired,
 };
 
 export default Header;

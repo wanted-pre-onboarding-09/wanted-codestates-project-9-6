@@ -1,17 +1,21 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styles from '../css/information.module.css';
 
 const Information = () => {
-  // const { currentCareType } = useSelector(({ careType }) => careType);
-
+  const { currentCareType } = useSelector(({ careType }) => careType);
+  const addresses = useSelector(({ addresses }) => addresses);
+  const { address } = addresses;
+  console.log(address);
   return (
     <div className={styles.container}>
       <section className={styles.details}>
         <h3 className={styles.title}>신청내역</h3>
         <article className={styles.item}>
           <h4 className={styles.subtitle}>돌봄 유형</h4>
-          <div className={styles.content}>⏰ 시간제 돌봄</div>
+          <div className={styles.content}>
+            {currentCareType === 'TIME' ? '⏰ 시간제 돌봄' : '🌞 24시간 상주'}
+          </div>
         </article>
         <div className={styles.divider}></div>
         <article className={styles.item}>
@@ -26,11 +30,11 @@ const Information = () => {
         <article className={styles.item}>
           <h4 className={styles.subtitle}>돌봄 주소</h4>
           <div className={styles.content}>
-            <div>서울특별시 강남구 테헤란로 77길 9 (삼성동)</div>
+            <div>{address.roadAddress}</div>
             <div className={styles.pastAddress}>
-              <span>지번</span> 서울특별시 강남구 삼성동 143-27
+              <span>지번</span> {address.jibunAddress}
             </div>
-            <div>케어닥주공아파트 102동 1204호</div>
+            <div>{address.addressDetail}</div>
           </div>
         </article>
       </section>

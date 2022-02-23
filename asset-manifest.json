@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/wanted-codestates-project-9-6/static/css/main.47aa1041.css",
-    "main.js": "/wanted-codestates-project-9-6/static/js/main.1a90b3ea.js",
-    "static/js/787.f5d9ddaf.chunk.js": "/wanted-codestates-project-9-6/static/js/787.f5d9ddaf.chunk.js",
-    "index.html": "/wanted-codestates-project-9-6/index.html",
-    "static/media/Fill.svg": "/wanted-codestates-project-9-6/static/media/Fill.568bdf88a4284a57de58c5a5868b4b01.svg",
-    "main.47aa1041.css.map": "/wanted-codestates-project-9-6/static/css/main.47aa1041.css.map",
-    "main.1a90b3ea.js.map": "/wanted-codestates-project-9-6/static/js/main.1a90b3ea.js.map",
-    "787.f5d9ddaf.chunk.js.map": "/wanted-codestates-project-9-6/static/js/787.f5d9ddaf.chunk.js.map"
+    "main.css": "/wanted-codestates-project-9-6.github.io/react-github-pages/static/css/main.47aa1041.css",
+    "main.js": "/wanted-codestates-project-9-6.github.io/react-github-pages/static/js/main.d17ddd91.js",
+    "static/js/787.f5d9ddaf.chunk.js": "/wanted-codestates-project-9-6.github.io/react-github-pages/static/js/787.f5d9ddaf.chunk.js",
+    "index.html": "/wanted-codestates-project-9-6.github.io/react-github-pages/index.html",
+    "static/media/Fill.svg": "/wanted-codestates-project-9-6.github.io/react-github-pages/static/media/Fill.568bdf88a4284a57de58c5a5868b4b01.svg",
+    "main.47aa1041.css.map": "/wanted-codestates-project-9-6.github.io/react-github-pages/static/css/main.47aa1041.css.map",
+    "main.d17ddd91.js.map": "/wanted-codestates-project-9-6.github.io/react-github-pages/static/js/main.d17ddd91.js.map",
+    "787.f5d9ddaf.chunk.js.map": "/wanted-codestates-project-9-6.github.io/react-github-pages/static/js/787.f5d9ddaf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.47aa1041.css",
-    "static/js/main.1a90b3ea.js"
+    "static/js/main.d17ddd91.js"
   ]
 }

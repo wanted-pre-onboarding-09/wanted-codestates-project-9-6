@@ -1,4 +1,5 @@
 {
+  "homepage": "http://wanted-pre-onboarding-09.github.io/wanted-codestates-project-9-6/",
   "name": "care-doc",
   "version": "0.1.0",
   "private": true,
@@ -22,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +54,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.2.0",
     "eslint-plugin-react": "^7.28.0",
+    "gh-pages": "^3.2.3",
     "prettier": "2.5.1"
   }
 }

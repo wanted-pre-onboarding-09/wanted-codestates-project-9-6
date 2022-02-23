@@ -15,7 +15,6 @@ const Care = () => {
   const dispatch = useDispatch();
   useEffect(() => dispatch(clearStep()), []);
   useEffect(() => dispatch(clearType()), []);
-
   const renderPageStep = (pageNumber) => {
     switch (pageNumber) {
       case 1:
@@ -25,11 +24,7 @@ const Care = () => {
       case 3:
         return <SubmitAddress />;
       default:
-        return (
-          <div>
-            <Confirm />
-          </div>
-        );
+        return <Confirm />;
     }
   };
 

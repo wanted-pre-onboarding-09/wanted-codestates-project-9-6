@@ -8,6 +8,7 @@ const Footer = () => {
   const { currentCareType } = useSelector(({ careType }) => careType);
   const addresses = useSelector(({ addresses }) => addresses);
   const { address } = addresses;
+  const { currentPhone } = useSelector(({ phone }) => phone);
 
   const dispatch = useDispatch();
 
@@ -27,7 +28,7 @@ const Footer = () => {
       case 3:
         return !(address.addresDetail !== '' && address.roadAddress !== '');
       case 4:
-        return true;
+        return !(currentPhone.length === 11);
       default:
         return null;
     }

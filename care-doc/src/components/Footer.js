@@ -46,9 +46,8 @@ const Footer = () => {
   };
 
   const moveToLast = () => {
-    axios
-      .post('https://caredoc-fe-server.herokuapp.com/application', body)
-      .then((res) => console.log(res));
+    axios.post('https://caredoc-fe-server.herokuapp.com/application', body);
+
     navigate('/care/final');
   };
 

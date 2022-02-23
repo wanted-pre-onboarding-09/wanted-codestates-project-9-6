@@ -1,21 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 
 import { BsSearch } from 'react-icons/bs';
 import { AiOutlineClose } from 'react-icons/ai';
 
 import styles from '../../css/AddressModal.module.css';
 import AddressList from './AddressList';
+import { getAddress } from '../../store/addressSlice';
 
-const AddressModal = ({ onClose }) => {
+const AddressModal = ({ onClose, setInputs, toggleFocus }) => {
+  const { addresses } = ({ addresses }) => addresses;
+  console.log(addresses);
+  const dispatch = useDispatch();
   const [isSearching, setIsSearching] = useState(false);
+  const [keyword, setKeyword] = useState('');
 
-  console.log(isSearching);
+  const onChange = (e) => {
+    setKeyword(e.target.value);
+  };
 
-  const onSearch = (e) => {
+  const onSearch = async (e) => {
     if (e.key !== 'Enter') return;
+
+    dispatch(getAddress(keyword));
+
     setIsSearching(true);
   };
+
+  useEffect(() => {
+    if (keyword === '') setIsSearching(false);
+  }, [keyword]);
 
   return (
     <div className={styles.ModalContainer}>
@@ -30,13 +45,19 @@ const AddressModal = ({ onClose }) => {
             type="text"
             placeholder="주소 또는 건물명으로 검색"
             className={styles.SearchInput}
+            value={keyword}
             onKeyUp={onSearch}
+            onChange={onChange}
           />
         </div>
       </div>
       <>
         {isSearching ? (
-          <AddressList />
+          <AddressList
+            keyword={keyword}
+            setInputs={setInputs}
+            toggleFocus={toggleFocus}
+          />
         ) : (
           <div className={styles.DescriptionContainer}>
             <span className={styles.Description}>
@@ -62,6 +83,8 @@ const AddressModal = ({ onClose }) => {
 
 AddressModal.propTypes = {
   onClose: PropTypes.func.isRequired,
+  setInputs: PropTypes.func.isRequired,
+  toggleFocus: PropTypes.func.isRequired,
 };
 
 export default AddressModal;

@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import styles from '../css/Care.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearStep } from '../store/pageStep';
+import SubmitAddress from './SubmitAddress';
 import { clearType } from '../store/careType';
-import Footer1 from './Footer1';
-import Title from './Title';
+import Footer from './Footer';
 import Category from './Category';
 import Header from './Header';
 import Confirm from './Confirm';
+import Schedule from './Schedule';
 
 const Care = () => {
   const { currentStep } = useSelector(({ pageStep }) => pageStep);
@@ -20,9 +21,9 @@ const Care = () => {
       case 1:
         return <Category />;
       case 2:
-        return <div>component 2</div>;
+        return <Schedule />;
       case 3:
-        return <div>component 3</div>;
+        return <SubmitAddress />;
       default:
         return (
           <div>
@@ -39,9 +40,8 @@ const Care = () => {
         돌봄 유형 <span>{currentStep}</span>
         <span> / 4</span>
       </div>
-      <Title text="돌봄 유형을 설정해주세요" />
       {renderPageStep(currentStep)}
-      <Footer1 />
+      <Footer />
     </main>
   );
 };

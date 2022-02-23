@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from '../css/Care.module.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { clearStep } from '../store/pageStep';
 import { clearType } from '../store/careType';
 import Footer1 from './Footer1';
@@ -11,7 +11,6 @@ import Confirm from './Confirm';
 
 const Care = () => {
   const { currentStep } = useSelector(({ pageStep }) => pageStep);
-
   const dispatch = useDispatch();
   useEffect(() => dispatch(clearStep()), []);
   useEffect(() => dispatch(clearType()), []);

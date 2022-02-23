@@ -6,6 +6,7 @@ import { nextStep, previousStep } from '../store/pageStep';
 const Footer1 = () => {
   const { currentStep } = useSelector(({ pageStep }) => pageStep);
   const { currentCareType } = useSelector(({ careType }) => careType);
+
   const dispatch = useDispatch();
 
   const nextClick = () => {
@@ -25,6 +26,7 @@ const Footer1 = () => {
         return true;
       case 4:
         return true;
+
       default:
         return null;
     }

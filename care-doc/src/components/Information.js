@@ -1,11 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import styles from '../css/information.module.css';
 
 const Information = () => {
-  const { currentCareType } = useSelector(({ careType }) => careType);
+  // const { currentCareType } = useSelector(({ careType }) => careType);
 
-  console.log(currentCareType);
   return (
     <div className={styles.container}>
       <section className={styles.details}>

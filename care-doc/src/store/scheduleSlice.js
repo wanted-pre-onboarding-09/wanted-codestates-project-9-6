@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  startDate: String, // yyyy-MM-dd
-  endDate: String, // yyyy-MM-dd
-  visitTime: String, // hh:mm:ss
-  hour: Number | null,
+  startDate: '',
+  endDate: '',
+  visitTime: '',
+  hour: 0,
 };
 
 const scheduleSlice = createSlice({

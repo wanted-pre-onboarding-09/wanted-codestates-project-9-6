@@ -11,15 +11,15 @@ const Schedule = () => {
   const dispatch = useDispatch();
 
   const StartDateValueHandler = (e) => {
-    setStartDateValue(String(e.target.value));
-    // const variable = JS(e.target.value));
-    dispatch(changeStartDate(String(e.target.value)));
+    const variable = String(e.target.value);
+    setStartDateValue(variable);
+    dispatch(changeStartDate(variable));
   };
 
   const EndDateValueHandler = (e) => {
-    setEndDateValue(String(e.target.value));
-    // const variable = JSON.stringify(new Date(e.target.value));
-    dispatch(changeEndDate(String(e.target.value)));
+    const variable = String(e.target.value);
+    setEndDateValue(variable);
+    dispatch(changeEndDate(variable));
   };
 
   return (

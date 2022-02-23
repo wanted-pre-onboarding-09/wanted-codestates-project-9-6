@@ -9,16 +9,21 @@ import pageStepReducer from './store/pageStep';
 import addressReducer from './store/addressSlice';
 import careTypeReducer from './store/careType';
 import phoneReducer from './store/phoneNumber';
+import scheduleReducer from './store/scheduleSlice';
+import logger from 'redux-logger';
 
 const reducers = combineReducers({
   addresses: addressReducer,
   pageStep: pageStepReducer,
   careType: careTypeReducer,
   phone: phoneReducer,
+  schedule: scheduleReducer,
 });
 
 const store = configureStore({
   reducer: reducers,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  serializableCheck: false,
 });
 
 ReactDOM.render(

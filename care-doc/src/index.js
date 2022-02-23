@@ -7,9 +7,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import pageStepReducer from './store/pageStep';
+import addressReducer from './store/addressSlice';
 import careTypeReducer from './store/careType';
 
 const reducers = combineReducers({
+  addresses: addressReducer,
   pageStep: pageStepReducer,
   careType: careTypeReducer,
 });

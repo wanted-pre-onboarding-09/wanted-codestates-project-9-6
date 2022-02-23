@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styles from '../css/Care.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearStep } from '../store/pageStep';
+import SubmitAddress from './SubmitAddress';
 import { clearType } from '../store/careType';
 import Footer from './Footer';
 import Category from './Category';
@@ -22,7 +23,7 @@ const Care = () => {
       case 2:
         return <Schedule />;
       case 3:
-        return <div>component 3</div>;
+        return <SubmitAddress />;
       default:
         return <div>4 이상임</div>;
     }

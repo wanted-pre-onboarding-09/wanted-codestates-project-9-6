@@ -27,5 +27,6 @@ module.exports = {
       },
     ],
     'multiline-ternary': 'off',
+    indent: 'off',
   },
 };

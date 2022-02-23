@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Header = ({ displayNone }) => {
   const displayType = displayNone ? styles.none : '';
+
   return (
     <header className={styles.header}>
       <Link to="/">

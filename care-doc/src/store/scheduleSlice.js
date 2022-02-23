@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  startDate: '',
-  endDate: '',
-  visitTime: '',
+  startDate: '', // yyyy-MM-dd
+  endDate: '', // yyyy-MM-dd
+  visitTime: '', // hh:mm:ss
   hour: 0,
+  startCare: '선택',
+  dayCare: '선택',
 };
 
 const scheduleSlice = createSlice({
@@ -23,6 +25,12 @@ const scheduleSlice = createSlice({
     changeHour: (state, action) => {
       state.hour = action.payload;
     },
+    changeStartCare: (state, action) => {
+      state.startCare = action.payload;
+    },
+    changeDayCare: (state, action) => {
+      state.dayCare = action.payload;
+    },
     clearDate: () => initialState,
   },
 });
@@ -33,5 +41,7 @@ export const {
   changeVisitTime,
   chageHour,
   clearDate,
+  changeStartCare,
+  changeDayCare,
 } = scheduleSlice.actions;
 export default scheduleSlice.reducer;

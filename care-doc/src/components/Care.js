@@ -7,6 +7,7 @@ import Footer1 from './Footer1';
 import Title from './Title';
 import Category from './Category';
 import Header from './Header';
+import Confirm from './Confirm';
 
 const Care = () => {
   const { currentStep } = useSelector(({ pageStep }) => pageStep);
@@ -24,7 +25,11 @@ const Care = () => {
       case 3:
         return <div>component 3</div>;
       default:
-        return <div>4 이상임</div>;
+        return (
+          <div>
+            <Confirm />
+          </div>
+        );
     }
   };
 

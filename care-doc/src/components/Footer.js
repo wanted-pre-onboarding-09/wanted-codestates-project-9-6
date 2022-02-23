@@ -41,16 +41,18 @@ const Footer = () => {
     },
     phoneNumber: currentPhone,
     schedule: {
-      startDate: '2022-02-22',
-      endDate: '2022-02-23',
-      visitTime: '11',
-      hour: 3,
+      startDate: schedule.startDate,
+      endDate: schedule.endDate,
+      visitTime: schedule.startCare,
+      hour: Number(schedule.dayCare[0]),
     },
     workType: currentCareType,
   };
 
   const moveToLast = () => {
-    axios.post('https://caredoc-fe-server.herokuapp.com/application', body);
+    axios
+      .post('https://caredoc-fe-server.herokuapp.com/application', body)
+      .then((res) => console.log(res));
 
     navigate('/care/final');
   };

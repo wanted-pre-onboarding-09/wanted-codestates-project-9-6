@@ -1,25 +1,83 @@
 import React from 'react';
-import styles from '../css/Footer.module.css';
-import PropTypes from 'prop-types';
+import styles from '../css/Footer1.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { nextStep, previousStep } from '../store/pageStep';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-const Footer = ({ disabled }) => {
-  const nextBtnType = disabled ? styles.next__btn__disabled : styles.next__btn;
-  const nextType = disabled ? styles.next__disabled : styles.next;
+const Footer = () => {
+  const { currentStep } = useSelector(({ pageStep }) => pageStep);
+  const { currentCareType } = useSelector(({ careType }) => careType);
+  const addresses = useSelector(({ addresses }) => addresses);
+  const { address } = addresses;
+  const { currentPhone } = useSelector(({ phone }) => phone);
+
+  const dispatch = useDispatch();
+
+  const nextClick = () => {
+    dispatch(nextStep(currentStep));
+  };
+  const prevClick = () => {
+    dispatch(previousStep(currentStep));
+  };
+
+  const navigate = useNavigate();
+
+  const moveToLast = () => {
+    const body = {
+      address: {
+        locationCode: '11',
+        roadCode: '11',
+        roadAddress: '11',
+        jibunAddress: '11',
+        sidoName: '11',
+        sigunguName: '11',
+        myundongName: '11',
+        liName: 's11',
+        addressDetail: '11',
+      },
+      phoneNumber: '11',
+      schedule: {
+        startDate: '11',
+        endDate: '11',
+        visitTime: '11',
+        hour: 0,
+      },
+      workType: 'TIME',
+    };
+
+    axios
+      .post('https://caredoc-fe-server.herokuapp.com/application', body)
+      .then((res) => console.log(res));
+    navigate('/care/final');
+  };
+
+  const btnValidation = (pageNumber) => {
+    switch (pageNumber) {
+      case 1:
+        return !currentCareType;
+      case 2:
+        return false;
+      case 3:
+        return !(address.addresDetail !== '' && address.roadAddress !== '');
+      case 4:
+        return !(currentPhone.length === 11);
+      default:
+        return null;
+    }
+  };
 
   return (
-    <footer className={styles.footer}>
-      <button className={styles.prev__btn}>
-        <span className={styles.prev}>이전</span>
+    <div className={styles.footerWrapper}>
+      <button onClick={prevClick}>이전</button>
+      <button
+        onClick={currentStep === 4 ? moveToLast : nextClick}
+        disabled={btnValidation(currentStep)}
+      >
+        다음
       </button>
-      <button className={`${nextBtnType}`}>
-        <span className={`${nextType}`}>다음</span>
-      </button>
-    </footer>
+    </div>
   );
-};
-
-Footer.propTypes = {
-  disabled: PropTypes.bool.isRequired,
 };
 
 export default Footer;

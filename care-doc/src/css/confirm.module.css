@@ -1,4 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 62px;
+}
+
+.guide__outer {
+  width: 328px;
+  margin: 32px 16px 0 16px;
+  color: #5b5555;
+}
+
+.guide__state {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.guide__page {
+  color: #d3d2d2;
+  margin: 0 2px;
+  font-size: 12px;
+}
+
+.guide__page span {
+  margin-right: 2px;
+}
+.guide__page__current {
+  color: #ff8450;
+}
+
+.guide__content {
+  width: 100%;
+  margin: 8px 0 0 0;
+  font-size: 24px;
+}
+
 .input {
   width: 328px;
   padding: 14px 16px;
+  margin: auto;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  box-sizing: border-box;
 }

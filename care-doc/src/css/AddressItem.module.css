@@ -2,6 +2,7 @@
   display: flex;
   opacity: 1;
   align-items: center;
+  justify-content: center;
   background-color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(246, 246, 246);
   padding: 10px;
@@ -12,9 +13,6 @@
 }
 .NewAddress {
   height: 20px;
-  left: 0px;
-  top: 0px;
-  position: static;
   font-weight: bold;
   font-size: 14px;
   line-height: 20px;
@@ -22,35 +20,28 @@
 }
 .OldAddressContainer {
   display: flex;
-  opacity: 1;
   box-sizing: border-box;
   align-items: center;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
   margin-top: 8px;
 }
 .NumberBtn {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   letter-spacing: 0px;
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
   color: rgb(182, 179, 179);
   font-size: 14px;
   font-weight: 700;
-  text-align: center;
   line-height: 20px;
   background-color: rgb(246, 246, 246);
-  padding: 4px 8px;
   margin-right: 8px;
   border-radius: 16px;
   width: 35px;
-  height: 22px;
+  height: 20px;
 }
 .OldAddress {
   width: 231px;
-  height: 18px;
-  left: 39px;
-  top: 1px;
-  position: static;
   font-size: 12px;
   line-height: 18px;
   color: #7d7878;

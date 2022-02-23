@@ -6,6 +6,7 @@ import ModalPortal from './modal/ModalPortal';
 import AddressModal from './modal/AddressModal';
 
 const MiddleContent = () => {
+  console.log('Item 클릭하면 리렌더링');
   const [inputs, setInputs] = useState({
     mainAddress: '',
     detailAddress: '',
@@ -21,7 +22,7 @@ const MiddleContent = () => {
     });
   };
 
-  const toggleFocus = () => setFocusing(!focusing);
+  const toggleFocus = () => setFocusing((prev) => !prev);
 
   return (
     <>
@@ -64,7 +65,11 @@ const MiddleContent = () => {
       </div>
       {focusing && (
         <ModalPortal>
-          <AddressModal onClose={toggleFocus} />
+          <AddressModal
+            onClose={toggleFocus}
+            setInputs={setInputs}
+            toggleFocus={toggleFocus}
+          />
         </ModalPortal>
       )}
     </>

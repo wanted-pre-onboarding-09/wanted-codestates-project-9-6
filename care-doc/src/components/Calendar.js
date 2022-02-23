@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const Calendar = (props) => {
-  const [dateRange, setDateRange] = useState([null, null]);
-  const [startDate, endDate] = dateRange;
+const Calendar = () => {
+  const [startDate, setStartDate] = useState(new Date());
+
   return (
-    <DatePicker
-      selectsRange={true}
-      startDate={startDate}
-      endDate={endDate}
-      onChange={(update) => {
-        setDateRange(update);
-      }}
-      withPortal
-    />
+    <>
+      <DatePicker
+        dataFormat="yyyy/MM/dd"
+        selected={startDate}
+        onChange={(date) => setStartDate(date)}
+        startDate={startDate}
+        placeholderText="날짜 선택"
+      />
+    </>
   );
 };
 

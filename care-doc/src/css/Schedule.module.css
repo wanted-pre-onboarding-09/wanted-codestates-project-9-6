@@ -1,0 +1,212 @@
+.schedule_container {
+  /* Box / */
+
+  /*flex box  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  width: 360px;
+  height: 816px;
+  margin: 0px 0px;
+
+  overflow-y: scroll;
+  background: #ffffff;
+}
+
+.schedule_header {
+  width: 360px;
+  height: 56px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  /* Body1 */
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.previousArrow {
+  position: absolute;
+  left: 20px;
+}
+.schedule_main {
+  position: absolute;
+  top: 32px;
+  padding: 32px 16px 64px;
+}
+
+.procedure {
+  text-align: left;
+
+  /* Body1 */
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.procedure > span {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.title {
+  position: relative;
+  width: 328px;
+  left: -12px;
+  margin: 8px 0 40px 0;
+
+  /* / Heading6 / */
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+
+  color: #5b5555;
+}
+
+.date_container {
+  /*flex box  */
+  display: flex;
+  flex-direction: row;
+}
+
+.day_container {
+  /*flex box  */
+  display: flex;
+  flex-direction: column;
+  margin: 0 4px;
+}
+
+.dayTitle {
+  position: relative;
+  width: 160px;
+  height: 20px;
+  left: -60px;
+
+  /* Body3 */
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+
+  color: #5b5555;
+}
+
+.day {
+  width: 160px;
+  height: 48px;
+  background: #f6f6f6;
+  border-radius: 4px;
+  margin: 8px 0;
+
+  /*flex box  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectDay {
+  width: 112px;
+  height: 20px;
+  text-align: left;
+  /* Body3 */
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #b6b3b3;
+}
+
+.timeTitle {
+  position: relative;
+  width: 328px;
+  height: 20px;
+  left: -120px;
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.time {
+  width: 328px;
+  height: 48px;
+  left: 0px;
+  top: 28px;
+  background: #f6f6f6;
+  border-radius: 4px;
+
+  /*flex box  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 8px 0px;
+}
+
+.selectTime {
+  width: 264px;
+  height: 20px;
+  text-align: left;
+  /* Body3 */
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #b6b3b3;
+}
+
+.schedule_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  /* Body3 */
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.previuseBtn {
+  width: 80px;
+  height: 48px;
+  /*flex box  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nextBtn {
+  width: 278px;
+  height: 48px;
+  background: #ff8450;
+  border-radius: 4px;
+  color: #ffffff;
+  /*flex box  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

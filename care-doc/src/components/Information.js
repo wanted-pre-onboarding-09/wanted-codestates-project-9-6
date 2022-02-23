@@ -6,7 +6,7 @@ const Information = () => {
   const { currentCareType } = useSelector(({ careType }) => careType);
   const addresses = useSelector(({ addresses }) => addresses);
   const { address } = addresses;
-  console.log(address);
+
   return (
     <div className={styles.container}>
       <section className={styles.details}>

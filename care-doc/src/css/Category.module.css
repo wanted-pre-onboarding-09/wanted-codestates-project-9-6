@@ -1,0 +1,28 @@
+.categoryWrapper {
+  display: flex;
+  margin-top: 30px;
+  color: #5b5555;
+}
+
+.categoryWrapper div {
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e2e2;
+}
+
+.categoryWrapper div:first-child {
+  margin-right: 16px;
+}
+.categoryWrapper div p {
+  margin-top: 15px;
+}
+.hourAcitve {
+  color: #fff;
+  background-color: #ff8450;
+}

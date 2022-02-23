@@ -3,8 +3,8 @@ const initialState = {
   currentStep: 1,
 };
 
-const loginstepSlice = createSlice({
-  name: 'xxxxx',
+const pageStepSlice = createSlice({
+  name: 'pageStep',
   initialState,
   reducers: {
     nextStep: (state, action) => ({
@@ -13,12 +13,13 @@ const loginstepSlice = createSlice({
     }),
     previousStep: (state, action) => ({
       ...state,
-      currentStep: state.currentStep - 1,
+      currentStep:
+        state.currentStep > 1 ? state.currentStep - 1 : state.currentStep,
     }),
     clearStep: () => initialState,
   },
   // extraReducers:
 });
 
-export const { nextStep, previousStep, clearStep } = loginstepSlice.actions;
-export default loginstepSlice.reducer;
+export const { nextStep, previousStep, clearStep } = pageStepSlice.actions;
+export default pageStepSlice.reducer;

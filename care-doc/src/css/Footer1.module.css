@@ -1,0 +1,29 @@
+.footerWrapper {
+  width: 100%;
+  max-width: 768px;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.footerWrapper button {
+  font-size: 14px;
+  text-align: center;
+  padding: 14px 0;
+  font-weight: 700;
+}
+
+.footerWrapper button:first-child {
+  width: 30%;
+  color: #7d7878;
+}
+.footerWrapper button:last-child {
+  background-color: #ff8450;
+  color: #ffffff;
+  width: 70%;
+  border-radius: 5px;
+}
+
+.footerWrapper button:last-child:disabled {
+  background-color: #e2e2e2;
+  color: #b6b3b3;
+}

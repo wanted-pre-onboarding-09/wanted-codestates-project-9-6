@@ -1,15 +1,15 @@
 import React from 'react';
-// import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Calendar from './components/Calendar';
-import Schedule from './components/Schedule';
+import Home from './components/Home';
+import Care from './components/Care';
 
 function App() {
   return (
-    <div className="App">
-      <Schedule />
-      <Calendar />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/care" element={<Care />} />
+    </Routes>
   );
 }
 

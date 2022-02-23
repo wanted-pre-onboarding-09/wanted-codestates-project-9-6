@@ -3,11 +3,29 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import pageStepReducer from './store/pageStep';
+import staticDataReducer from './store/staticData';
+import careTypeReducer from './store/careType';
+
+const reducers = combineReducers({
+  static: staticDataReducer,
+  pageStep: pageStepReducer,
+  careType: careTypeReducer,
+});
+
+const store = configureStore({
+  reducer: reducers,
+});
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root'),
 );
 

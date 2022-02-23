@@ -1,0 +1,78 @@
+.outer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 375px;
+  height: 720px;
+  color: #5b5555;
+  padding: 32px 16px 64px;
+}
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+}
+.inputOuter {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.inputWraps {
+  width: 328px;
+  height: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inputWrapsInner {
+  display: flex;
+  width: 328px;
+  height: 48px;
+}
+.inputWrap {
+  width: 328px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #eeeeee;
+  padding-left: 14px;
+}
+.input {
+  width: 296px;
+  height: 20px;
+  border-radius: 4px;
+  background: #fff;
+  border: none;
+  box-sizing: border-box;
+  color: #b6b3b3;
+}
+.input:focus {
+  outline: none;
+}
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #ff8450;
+  width: 75px;
+  height: 48px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 8px;
+  border: none;
+  cursor: pointer;
+}
+.hasText {
+  width: 215px;
+}

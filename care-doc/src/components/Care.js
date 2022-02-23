@@ -7,6 +7,7 @@ import Footer1 from './Footer1';
 import Title from './Title';
 import Category from './Category';
 import Header from './Header';
+import Schedule from './Schedule';
 
 const Care = () => {
   const { currentStep } = useSelector(({ pageStep }) => pageStep);
@@ -20,7 +21,7 @@ const Care = () => {
       case 1:
         return <Category />;
       case 2:
-        return <div>component 2</div>;
+        return <Schedule />;
       case 3:
         return <div>component 3</div>;
       default:

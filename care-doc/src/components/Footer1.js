@@ -20,7 +20,7 @@ const Footer1 = () => {
       case 1:
         return !currentCareType;
       case 2:
-        return true;
+        return false;
       case 3:
         return true;
       case 4:

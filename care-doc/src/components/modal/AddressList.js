@@ -19,10 +19,11 @@ const AddressList = ({ keyword, setInputs, toggleFocus }) => {
         ? addresses.juso.map((address, idx) => (
             <AddressItem
               key={idx}
+              address={address}
               newAddress={address.roadAddr}
               oldAddress={address.jibunAddr}
               number={address.zipNo}
-              selectAddress={selectAddress}
+              handleAddress={selectAddress}
             />
           ))
         : null}

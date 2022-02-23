@@ -33,7 +33,18 @@ const initialState = {
 const addressSlice = createSlice({
   name: 'addresses',
   initialState,
-  reducers: {},
+  reducers: {
+    selectAddress: (state, action) => {
+      state.address.jibunAddress = action.payload.jibunAddr;
+      state.address.liName = action.payload.liNm;
+      state.address.locationCode = action.payload.lnbrMnnm;
+      state.address.roadCode = action.payload.buldMnnm;
+      state.address.myundongName = action.payload.emdNm;
+      state.address.roadAddress = action.payload.roadAddr;
+      state.address.sidoName = action.payload.siNm;
+      state.address.sigunguName = action.payload.sggNm;
+    },
+  },
   extraReducers: {
     [getAddress.pending]: (state) => ({
       ...state,
@@ -55,4 +66,5 @@ const addressSlice = createSlice({
 });
 
 export { getAddress };
+export const { selectAddress } = addressSlice.actions;
 export default addressSlice.reducer;

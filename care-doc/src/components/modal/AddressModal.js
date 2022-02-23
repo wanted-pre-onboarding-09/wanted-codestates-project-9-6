@@ -10,6 +10,8 @@ import AddressList from './AddressList';
 import { getAddress } from '../../store/addressSlice';
 
 const AddressModal = ({ onClose, setInputs, toggleFocus }) => {
+  const { addresses } = ({ addresses }) => addresses;
+  console.log(addresses);
   const dispatch = useDispatch();
   const [isSearching, setIsSearching] = useState(false);
   const [keyword, setKeyword] = useState('');

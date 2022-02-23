@@ -6,7 +6,6 @@ import ModalPortal from './modal/ModalPortal';
 import AddressModal from './modal/AddressModal';
 
 const MiddleContent = () => {
-  console.log('Item 클릭하면 리렌더링');
   const [inputs, setInputs] = useState({
     mainAddress: '',
     detailAddress: '',

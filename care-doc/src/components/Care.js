@@ -30,7 +30,7 @@ const Care = () => {
 
   return (
     <main className={styles.careWrapper}>
-      <Header displayNone={false} />
+      <Header />
       <div className={styles.pagination}>
         돌봄 유형 <span>{currentStep}</span>
         <span> / 4</span>

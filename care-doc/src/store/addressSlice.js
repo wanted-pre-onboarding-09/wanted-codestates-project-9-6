@@ -7,7 +7,9 @@ const getAddress = createAsyncThunk(
   getAddressAction,
   async (keyword, ThunkAPI) => {
     const response = await axios.get(
-      `https://www.juso.go.kr/addrlink/addrLinkApi.do?currentPage=1&countPerPage=10&keyword=${keyword}&confmKey=${process.env.REACT_APP_ADDRESS_API_KEY}&resultType=json`,
+      // `https://www.juso.go.kr/addrlink/addrLinkApi.do?currentPage=1&countPerPage=10&keyword=${keyword}&confmKey=${process.env.REACT_APP_ADDRESS_API_KEY}&resultType=json`,
+      `https://www.juso.go.kr/addrlink/addrLinkApi.do?currentPage=1&countPerPage=10&keyword=${keyword}&confmKey=devU01TX0FVVEgyMDIyMDEyODIzMjIyNjExMjE5NjE=
+      &resultType=json`,
     );
     return response.data.results;
   },

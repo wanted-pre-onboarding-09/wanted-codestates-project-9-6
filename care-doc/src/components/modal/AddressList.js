@@ -16,7 +16,7 @@ const AddressList = ({ keyword, setInputs, toggleFocus }) => {
   return (
     <div className={styles.ListContainer}>
       {keyword !== ''
-        ? addresses.juso.map((address, idx) => (
+        ? addresses?.juso?.map((address, idx) => (
             <AddressItem
               key={idx}
               address={address}

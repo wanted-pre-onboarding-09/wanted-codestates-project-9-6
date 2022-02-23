@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-
-import { BsSearch } from 'react-icons/bs';
 import { AiOutlineClose } from 'react-icons/ai';
 
-import styles from '../../css/AddressModal.module.css';
+import { BsSearch } from 'react-icons/bs';
 import AddressList from './AddressList';
 import { getAddress } from '../../store/addressSlice';
 
+import styles from '../../css/AddressModal.module.css';
+
 const AddressModal = ({ onClose, setInputs, toggleFocus }) => {
-  const { addresses } = ({ addresses }) => addresses;
-  console.log(addresses);
   const dispatch = useDispatch();
   const [isSearching, setIsSearching] = useState(false);
   const [keyword, setKeyword] = useState('');

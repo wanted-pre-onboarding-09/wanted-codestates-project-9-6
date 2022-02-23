@@ -6,6 +6,9 @@ import { nextStep, previousStep } from '../store/pageStep';
 const Footer = () => {
   const { currentStep } = useSelector(({ pageStep }) => pageStep);
   const { currentCareType } = useSelector(({ careType }) => careType);
+  const addresses = useSelector(({ addresses }) => addresses);
+  const { address } = addresses;
+
   const dispatch = useDispatch();
 
   const nextClick = () => {
@@ -22,7 +25,7 @@ const Footer = () => {
       case 2:
         return false;
       case 3:
-        return true;
+        return !(address.addresDetail !== '' && address.roadAddress !== '');
       case 4:
         return true;
       default:

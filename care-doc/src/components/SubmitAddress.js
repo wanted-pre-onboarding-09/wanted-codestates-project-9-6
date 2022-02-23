@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Style from '../css/SubmitAddress.module.css';
 import { AiOutlineSearch } from 'react-icons/ai';
 
 import ModalPortal from './modal/ModalPortal';
 import AddressModal from './modal/AddressModal';
+import { useDispatch } from 'react-redux';
+import { clearAddress, wrtieDetailAdress } from '../store/addressSlice';
 
 const MiddleContent = () => {
+  const dispatch = useDispatch();
   const [inputs, setInputs] = useState({
     mainAddress: '',
     detailAddress: '',
@@ -19,9 +22,12 @@ const MiddleContent = () => {
       ...inputs,
       [name]: value,
     });
+    dispatch(wrtieDetailAdress(detailAddress));
   };
 
   const toggleFocus = () => setFocusing((prev) => !prev);
+
+  useEffect(() => dispatch(clearAddress()), []);
 
   return (
     <>

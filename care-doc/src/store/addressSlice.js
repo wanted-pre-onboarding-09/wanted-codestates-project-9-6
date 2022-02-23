@@ -44,6 +44,10 @@ const addressSlice = createSlice({
       state.address.sidoName = action.payload.siNm;
       state.address.sigunguName = action.payload.sggNm;
     },
+    wrtieDetailAdress: (state, action) => {
+      state.address.addressDetail = action.payload;
+    },
+    clearAddress: () => initialState,
   },
   extraReducers: {
     [getAddress.pending]: (state) => ({
@@ -66,5 +70,6 @@ const addressSlice = createSlice({
 });
 
 export { getAddress };
-export const { selectAddress } = addressSlice.actions;
+export const { selectAddress, wrtieDetailAdress, clearAddress } =
+  addressSlice.actions;
 export default addressSlice.reducer;

@@ -10,7 +10,6 @@ const CareSelect = () => {
 
   const dispatch = useDispatch();
 
-  console.log(startCare);
   const mockData = [
     { hour: '100', text: '선택' },
     { hour: '00', text: '오전 12시' },
@@ -44,7 +43,7 @@ const CareSelect = () => {
   const hourSelect = (e) => {
     dispatch(changeDayCare(e.target.value));
   };
-
+  if (currentCareType === 'DAY') dispatch(changeDayCare('24시간'));
   return (
     <section className={styles.careInputWarp}>
       <p className={styles.careTitle}>돌봄 시작 시간</p>
@@ -62,9 +61,7 @@ const CareSelect = () => {
         disabled={currentCareType === 'DAY'}
       >
         {currentCareType === 'DAY' ? (
-          <option value="24시간" selected>
-            24시간
-          </option>
+          <option value="24시간">24시간</option>
         ) : (
           <>
             <option value="선택">선택</option>

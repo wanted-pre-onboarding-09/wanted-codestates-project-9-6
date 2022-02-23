@@ -13,11 +13,7 @@ const Footer = () => {
   const { currentPhone } = useSelector(({ phone }) => phone);
   const schedule = useSelector(({ schedule }) => schedule);
 
-  console.log(schedule);
   const dispatch = useDispatch();
-
-  console.log(schedule);
-
   const nextClick = () => {
     dispatch(nextStep(currentStep));
   };
@@ -52,13 +48,12 @@ const Footer = () => {
   const moveToLast = () => {
     axios
       .post('https://caredoc-fe-server.herokuapp.com/application', body)
-      .then((res) => console.log(res));
+      .then((res) => console.log(res.data));
 
     navigate('/care/final');
   };
 
   const btnValidation = (pageNumber) => {
-    console.log();
     switch (pageNumber) {
       case 1:
         return !currentCareType;

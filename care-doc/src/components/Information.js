@@ -7,9 +7,6 @@ const Information = () => {
   const addresses = useSelector(({ addresses }) => addresses);
   const { address } = addresses;
   const schedules = useSelector(({ schedule }) => schedule);
-
-  console.log(schedules);
-
   return (
     <div className={styles.container}>
       <section className={styles.details}>

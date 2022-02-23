@@ -4,8 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clearStep } from '../store/pageStep';
 import SubmitAddress from './SubmitAddress';
 import { clearType } from '../store/careType';
-import Footer1 from './Footer1';
-import Title from './Title';
+import Footer from './Footer';
 import Category from './Category';
 import Header from './Header';
 import Schedule from './Schedule';
@@ -37,9 +36,8 @@ const Care = () => {
         돌봄 유형 <span>{currentStep}</span>
         <span> / 4</span>
       </div>
-      <Title text="돌봄 유형을 설정해주세요" />
       {renderPageStep(currentStep)}
-      <Footer1 />
+      <Footer />
     </main>
   );
 };

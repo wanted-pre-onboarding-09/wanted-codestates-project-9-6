@@ -1,25 +1,43 @@
 import React from 'react';
-import styles from '../css/Footer.module.css';
-import PropTypes from 'prop-types';
+import styles from '../css/Footer1.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { nextStep, previousStep } from '../store/pageStep';
 
-const Footer = ({ disabled }) => {
-  const nextBtnType = disabled ? styles.next__btn__disabled : styles.next__btn;
-  const nextType = disabled ? styles.next__disabled : styles.next;
+const Footer = () => {
+  const { currentStep } = useSelector(({ pageStep }) => pageStep);
+  const { currentCareType } = useSelector(({ careType }) => careType);
+  const dispatch = useDispatch();
+
+  const nextClick = () => {
+    dispatch(nextStep(currentStep));
+  };
+  const prevClick = () => {
+    dispatch(previousStep(currentStep));
+  };
+
+  const btnValidation = (pageNumber) => {
+    switch (pageNumber) {
+      case 1:
+        return !currentCareType;
+      case 2:
+        return false;
+      case 3:
+        return true;
+      case 4:
+        return true;
+      default:
+        return null;
+    }
+  };
 
   return (
-    <footer className={styles.footer}>
-      <button className={styles.prev__btn}>
-        <span className={styles.prev}>이전</span>
+    <div className={styles.footerWrapper}>
+      <button onClick={prevClick}>이전</button>
+      <button onClick={nextClick} disabled={btnValidation(currentStep)}>
+        다음
       </button>
-      <button className={`${nextBtnType}`}>
-        <span className={`${nextType}`}>다음</span>
-      </button>
-    </footer>
+    </div>
   );
-};
-
-Footer.propTypes = {
-  disabled: PropTypes.bool.isRequired,
 };
 
 export default Footer;

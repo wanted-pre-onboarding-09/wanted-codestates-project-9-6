@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import styles from '../css/Schedule.module.css';
 import ArrowImg from './icons/Arrow.png';
 import ArrowLfetImg from './icons/ArrowLfet.png';
+import { changeStartDate, changeEndDate } from '../store/scheduleSlice';
 
 const Schedule = () => {
-  const [endDateValue, setEndDateValue] = useState('');
   const [startDateValue, setStartDateValue] = useState('');
+  const [endDateValue, setEndDateValue] = useState('');
+  const dispatch = useDispatch();
 
   const StartDateValueHandler = (e) => {
-    setStartDateValue(e.target.value);
-    console.log(e.target.value);
+    setStartDateValue(String(e.target.value));
+    // const variable = JS(e.target.value));
+    dispatch(changeStartDate(String(e.target.value)));
   };
 
   const EndDateValueHandler = (e) => {
-    setEndDateValue(e.target.value);
-    console.log(e.target.value);
+    setEndDateValue(String(e.target.value));
+    // const variable = JSON.stringify(new Date(e.target.value));
+    dispatch(changeEndDate(String(e.target.value)));
   };
 
   return (

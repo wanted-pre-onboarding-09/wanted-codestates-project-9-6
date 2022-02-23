@@ -39,7 +39,7 @@ export const {
   changeStartDate,
   changeEndDate,
   changeVisitTime,
-  chageHour,
+  changeHour,
   clearDate,
   changeStartCare,
   changeDayCare,

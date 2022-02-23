@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearStep } from '../store/pageStep';
 import SubmitAddress from './SubmitAddress';
 import { clearType } from '../store/careType';
+import { clearDate } from '../store/scheduleSlice';
 import Footer from './Footer';
 import Category from './Category';
 import Header from './Header';
@@ -15,6 +16,7 @@ const Care = () => {
   const dispatch = useDispatch();
   useEffect(() => dispatch(clearStep()), []);
   useEffect(() => dispatch(clearType()), []);
+  useEffect(() => dispatch(clearDate()), []);
   const renderPageStep = (pageNumber) => {
     switch (pageNumber) {
       case 1:

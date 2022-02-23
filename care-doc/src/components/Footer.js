@@ -11,8 +11,12 @@ const Footer = () => {
   const addresses = useSelector(({ addresses }) => addresses);
   const { address } = addresses;
   const { currentPhone } = useSelector(({ phone }) => phone);
+  const schedule = useSelector(({ schedule }) => schedule);
 
+  console.log(schedule);
   const dispatch = useDispatch();
+
+  console.log(schedule);
 
   const nextClick = () => {
     dispatch(nextStep(currentStep));
@@ -52,11 +56,17 @@ const Footer = () => {
   };
 
   const btnValidation = (pageNumber) => {
+    console.log();
     switch (pageNumber) {
       case 1:
         return !currentCareType;
       case 2:
-        return false;
+        return !(
+          schedule.startDate !== '' &&
+          schedule.endDate !== '' &&
+          schedule.startCare !== '선택' &&
+          schedule.dayCare !== '선택'
+        );
       case 3:
         return !(address.addresDetail !== '' && address.roadAddress !== '');
       case 4:

@@ -1,14 +1,18 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styles from '../css/information.module.css';
 
 const Information = () => {
+  const { currentCareType } = useSelector(({ careType }) => careType);
+
+  console.log(currentCareType);
   return (
     <div className={styles.container}>
       <section className={styles.details}>
         <h3 className={styles.title}>신청내역</h3>
         <article className={styles.item}>
           <h4 className={styles.subtitle}>돌봄 유형</h4>
-          <div className={styles.content}>시간제돌봄</div>
+          <div className={styles.content}>⏰ 시간제 돌봄</div>
         </article>
         <div className={styles.divider}></div>
         <article className={styles.item}>

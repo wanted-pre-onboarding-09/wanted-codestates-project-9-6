@@ -8,10 +8,12 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import pageStepReducer from './store/pageStep';
 import staticDataReducer from './store/staticData';
+import addressReducer from './store/addressSlice';
 
 const reducers = combineReducers({
   pageStep: pageStepReducer,
   static: staticDataReducer,
+  addresses: addressReducer,
 });
 
 const store = configureStore({

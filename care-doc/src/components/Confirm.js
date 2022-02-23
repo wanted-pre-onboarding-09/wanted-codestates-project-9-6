@@ -6,9 +6,8 @@ import { addPhone } from '../store/phoneNumber';
 import Title from './Title';
 
 const Confirm = (props) => {
-  const text = `인증하신 휴대폰 번호로 \n
-   케어코디 프로필을 \n
-   받아보실 수 있어요 ☺️`;
+  const text =
+    '인증하신 휴대폰 번호로 \n 케어코디 프로필을 \n 받아보실 수 있어요 ☺️';
 
   const { currentPhone } = useSelector(({ phone }) => phone);
   const dispatch = useDispatch();

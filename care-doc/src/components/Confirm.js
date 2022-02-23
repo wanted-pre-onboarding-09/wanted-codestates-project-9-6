@@ -7,6 +7,7 @@ const Confirm = (props) => {
     const phoneNumber = e.target.value;
     if (phoneNumber > 0 && phoneNumber <= 9) {
       // 다음단계 버튼 활성화해야함
+      // test
       return true;
     }
   };

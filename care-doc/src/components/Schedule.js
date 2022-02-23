@@ -4,6 +4,7 @@ import styles from '../css/Schedule.module.css';
 import ArrowImg from './icons/Arrow.png';
 import ArrowLfetImg from './icons/ArrowLfet.png';
 import { changeStartDate, changeEndDate } from '../store/scheduleSlice';
+import CareSelect from './CareSelect';
 
 const Schedule = () => {
   const [startDateValue, setStartDateValue] = useState('');
@@ -81,6 +82,8 @@ const Schedule = () => {
           <div className={styles.previuseBtn}>이전</div>
           <div className={styles.nextBtn}>다음</div>
         </div>
+
+        <CareSelect />
       </section>
     </>
   );

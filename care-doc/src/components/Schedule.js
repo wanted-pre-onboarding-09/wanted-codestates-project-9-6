@@ -1,21 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../css/Schedule.module.css';
 import CalendarImg from './icons/Calendar.png';
 import ArrowImg from './icons/Arrow.png';
-import ArrowLfetImg from './icons/ArrowLfet.png';
+import TimeTable from './modal/TimeTable';
 
 const Schedule = () => {
+  const [show, setShow] = useState(false);
+  const modalOpen = () => {
+    console.log('hi');
+    setShow(true);
+  };
+
   return (
     <section className={styles.schedule_container}>
-      <div className={styles.schedule_header}>
-        <img className={styles.previousArrow} src={ArrowLfetImg} />
-        돌보미 신청하기
-      </div>
       <div className={styles.schedule_main}>
-        <div className={styles.procedure}>
-          돌봄 스케줄 <span>2/4</span>
-        </div>
-        <div className={styles.title}>돌봄 스케줄을 설정해주세요</div>
         <div className={styles.date_container}>
           <div className={styles.day_container}>
             <div className={styles.dayTitle}>시작일</div>
@@ -34,7 +32,7 @@ const Schedule = () => {
         </div>
 
         <div className={styles.timeTitle}>돌봄 시작시간</div>
-        <div className={styles.time}>
+        <div className={styles.time} onClick={modalOpen}>
           <div className={styles.selectTime}>선택</div>
           <img src={ArrowImg} />
         </div>
@@ -45,10 +43,7 @@ const Schedule = () => {
           <img src={ArrowImg} />
         </div>
       </div>
-      <div className={styles.schedule_footer}>
-        <div className={styles.previuseBtn}>이전</div>
-        <div className={styles.nextBtn}>다음</div>
-      </div>
+      <TimeTable open={show} />
     </section>
   );
 };

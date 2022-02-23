@@ -1,83 +1,107 @@
 # 케어닥
 
-## 팀원 소개
-|이름|Role|
-|:---:|:---:|
-|손영산|Team Leader|
-|서한석|Team Member|
-|유송현|Team member|
-|윤솔비|Team member|
-|이지수|Team member|
-|조영제|Team member|
-<br/>
-<br/>
+## 1. 프로젝트 소개
 
-## 기술 스택
+- 간병인 신청하기 모바일 웹 페이지 구현
+- 기간: 22.02.22~22.02.23
+
+## 2. 배포 링크
+
+https://caredoc.netlify.app/
+
+## 3. 팀원 소개
+
+|  이름  |    Role     |
+| :----: | :---------: |
+| 손영산 | Team Leader |
+| 서한석 | Team Member |
+| 유송현 | Team member |
+| 윤솔비 | Team member |
+| 이지수 | Team member |
+| 조영제 | Team member |
+
+## 4. 기술 스택
+
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-6236FF?style=for-the-badge&logo=axios&logoColor=white)
 <br/>
 
-## 디렉토리 구조
-![스크린샷 2022-02-23 오후 9 34 20](https://user-images.githubusercontent.com/87353284/155320351-4286d327-f9e7-448f-a753-975a40861e3c.png)
+## 5.디렉토리 구조
 
+```bash
+├── assets
+│   ├── Fill.svg
+│   ├── clock.png
+│   └── sun.png
+├── components
+│   ├── icons
+│   │   ├── Arrow.png
+│   │   ├── ArrowLfet.png
+│   │   └── Calendar.png
+│   ├── modal
+│   │   ├── AddressItem.js
+│   │   ├── AddressList.js
+│   │   ├── AddressModal.js
+│   │   └── ModalPortal.js
+│   ├── Calendar.js
+│   ├── Care.js
+│   ├── Category.js
+│   ├── Confirm.js
+│   ├── DoneMessage.js
+│   ├── Footer.js
+│   ├── Header.js
+│   ├── Home.js
+│   ├── Information.js
+│   ├── Schedule.js
+│   ├── SubmitAddress.js
+│   └── Title.js
+├── css
+│   ├── AddressItem.module.css
+│   ├── AddressList.module.css
+│   ├── AddressModal.module.css
+│   ├── Care.module.css
+│   ├── Category.module.css
+│   ├── DoneMessage.module.css
+│   ├── Footer1.module.css
+│   ├── Header.module.css
+│   ├── Home.module.css
+│   ├── Schedule.module.css
+│   ├── SubmitAddress.module.css
+│   ├── Title.module.css
+│   ├── Header.module.css
+│   ├── confirm.module.css
+│   └── information.module.css
+├── store
+│   ├── addressSlice.js
+│   ├── careType.js
+│   ├── pageStep.js
+│   └── phoneNumber.js
+├── App.css
+├── App.js
+├── index.css
+└── index.js
 
-## 커밋 컨벤션
-
-- feat : 신규 기능 추가
-
-- fix : 버그 수정
-
-- docs : 문서 수정
-
-- style : 코딩 스타일 관련(로직 변경x)
-
-- refactor : 코드 리팩터링
-
-- test : 테스트 코드 관련
-
-- ci : CI/CD 관련
-
-- chore : 기타
-
-**Rules**
-
-- 제목과 본문을 빈 행으로 구분한다
-- 커밋은 영문으로 작성한다
-- 제목 첫 글자는 대문자로 작성
-- 제목 끝에 마침표 넣지 않기
-- 제목은 명령문으로 사용하며 과거형을 사용하지 않는다
-- 어떻게 보다는 무엇과 왜를 설명한다
-
-- Title - 명령어로 작성, 마침표 x, 최대 50자
-- Body - 부연설명 필요시에 작성, Title과 한 칸 띄워 작성, 최대 72자
-- Footer - close issue id
-
-## Pull Request Template
-
-```markdown
-## 작업 분류
-
-- [ ] 버그 수정
-- [x] 신규 기능 추가
-- [ ] 리팩터링
-
-## 작업 개요
-
-- Nest.js 초기 세팅
-
-## 상세 내용
-
-- main.ts 및 Config 설정 ~~
-
-## 집중 요망!
-
-- Config 쪽 ~~~ 봐주세요!
 ```
 
-- 작업 개요 → 타이틀
-- 상세내용 → 작업의 상세내용
-- 집중요망 → 이쪽을 좀더 자세히 봐주세요
+## 5. 실행 방법
+
+```
+npm start
+```
+
+## 6. 커밋 컨벤션
+
+|          | 사용 예시        |
+| -------- | ---------------- |
+| Feat     | 새로운 기능 추가 |
+| Design   | CSS 스타일링     |
+| Fix      | 버그 수정        |
+| Refactor | 리팩토링         |
+| Deploy   | 배포             |
+| Remove   | 파일 삭제        |
+
+|

@@ -93,7 +93,7 @@
   position: relative;
   width: 160px;
   height: 20px;
-  left: -60px;
+  left: 1px;
 
   /* Body3 */
   font-family: Spoqa Han Sans Neo;
@@ -119,7 +119,7 @@
 }
 
 .selectDay {
-  width: 112px;
+  width: 150px;
   height: 20px;
   text-align: left;
   /* Body3 */
@@ -130,13 +130,25 @@
   font-size: 14px;
   line-height: 20px;
   color: #b6b3b3;
+  border: none;
+  background: #f6f6f6;
+}
+
+input[type='date']::before {
+  content: attr(data-placeholder);
+  width: 100%;
+}
+
+input[type='date']:focus::before,
+input[type='date']:valid::before {
+  display: none;
 }
 
 .timeTitle {
   position: relative;
   width: 328px;
   height: 20px;
-  left: -120px;
+  left: 1px;
 
   font-family: Spoqa Han Sans Neo;
   font-style: normal;

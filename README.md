@@ -1,8 +1,25 @@
 # 케어닥
 
 ## 팀원 소개
+|이름|Role|
+|:---:|:---:|
+|손영산|Team Leader|
+|서한석|Team Member|
+|유송현|Team member|
+|윤솔비|Team member|
+|이지수|Team member|
+|조영제|Team member|
+<br/>
+<br/>
 
 ## 기술 스택
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-6236FF?style=for-the-badge&logo=axios&logoColor=white)
+<br/>
 
 ## 디렉토리 구조
 

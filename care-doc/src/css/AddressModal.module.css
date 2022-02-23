@@ -1,10 +1,12 @@
 .ModalContainer {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
+  overflow-y: scroll;
+  width: 100vw;
   height: 100vh;
   z-index: 10;
+  background: #f6f6f6;
 }
 .Toolbar {
   display: flex;
@@ -33,9 +35,9 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 8px;
-  position: static;
+  /* position: static;
   left: 0px;
-  top: 0px;
+  top: 0px; */
   background: #ffffff;
 }
 .SearchContainer {
@@ -43,11 +45,11 @@
   flex-direction: row;
   align-items: center;
   padding: 0px 16px;
-  position: static;
+  /* position: static;
+  left: 8px;
+  top: 8px; */
   width: 344px;
   height: 48px;
-  left: 8px;
-  top: 8px;
   background: #ffffff;
   border: 1px solid #eeeeee;
   box-sizing: border-box;
@@ -89,12 +91,11 @@
 .Footer {
   padding: 16px;
   background: rgb(150 150 150 / 10%);
-  height: 100%;
+  height: 100vh;
 }
 .FooterDescription {
   width: 328px;
   height: 90px;
-  left: 0px;
   line-height: 18px;
   font-size: 12px;
   color: #b6b3b3;

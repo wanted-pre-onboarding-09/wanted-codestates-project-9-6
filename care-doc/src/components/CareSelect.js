@@ -46,7 +46,7 @@ const CareSelect = () => {
   };
 
   return (
-    <scetion className={styles.careInputWarp}>
+    <section className={styles.careInputWarp}>
       <p className={styles.careTitle}>돌봄 시작 시간</p>
       <select onChange={handleSelect} value={startCare}>
         {mockData.map((el) => (
@@ -78,7 +78,7 @@ const CareSelect = () => {
           </>
         )}
       </select>
-    </scetion>
+    </section>
   );
 };
 

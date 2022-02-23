@@ -18,7 +18,6 @@ const pageStepSlice = createSlice({
     }),
     clearStep: () => initialState,
   },
-  // extraReducers:
 });
 
 export const { nextStep, previousStep, clearStep } = pageStepSlice.actions;

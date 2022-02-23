@@ -17,7 +17,6 @@ const careTypeSlice = createSlice({
     }),
     clearType: () => initialState,
   },
-  // extraReducers:
 });
 
 export const { changeTime, changeDay, clearType } = careTypeSlice.actions;

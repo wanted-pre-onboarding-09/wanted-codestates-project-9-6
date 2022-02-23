@@ -1,5 +1,4 @@
 .ListContainer {
   display: flex;
   flex-direction: column;
-  width: 360px;
 }

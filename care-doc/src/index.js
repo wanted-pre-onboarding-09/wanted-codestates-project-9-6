@@ -9,11 +9,13 @@ import { Provider } from 'react-redux';
 import pageStepReducer from './store/pageStep';
 import staticDataReducer from './store/staticData';
 import addressReducer from './store/addressSlice';
+import careTypeReducer from './store/careType';
 
 const reducers = combineReducers({
-  pageStep: pageStepReducer,
   static: staticDataReducer,
   addresses: addressReducer,
+  pageStep: pageStepReducer,
+  careType: careTypeReducer,
 });
 
 const store = configureStore({

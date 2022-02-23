@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import Style from './css/SubmitAddress.module.css';
 import { AiOutlineSearch } from 'react-icons/ai';
 
+import ModalPortal from './modal/ModalPortal';
+import AddressModal from './modal/AddressModal';
+
 const MiddleContent = () => {
   const [inputs, setInputs] = useState({
     mainAddress: '',
     detailAddress: '',
   });
+  const [focusing, setFocusing] = useState(false);
   const { mainAddress, detailAddress } = inputs;
 
   const onChange = (e) => {
@@ -17,36 +21,53 @@ const MiddleContent = () => {
     });
   };
 
+  const toggleFocus = () => setFocusing(!focusing);
+
   return (
-    <div className={Style.inputOuter}>
-      <div className={Style.inputWraps}>
-        <div className={Style.inputWrapsInner}>
-          <div className={Style.inputWrap}>
-            <AiOutlineSearch />
-            <input
-              name="mainAddress"
-              className={`${Style.input} ${mainAddress ? Style.hasText : ''}`}
-              type="text"
-              placeholder="주소 또는 건물명으로 검색"
-              value={mainAddress}
-              onChange={onChange}
-            />
+    <>
+      <div className={Style.inputOuter}>
+        <div className={Style.inputWraps}>
+          <div className={Style.inputWrapsInner}>
+            <div className={Style.inputWrap}>
+              <AiOutlineSearch />
+              <input
+                name="mainAddress"
+                className={`${Style.input} ${mainAddress ? Style.hasText : ''}`}
+                type="text"
+                placeholder="주소 또는 건물명으로 검색"
+                value={mainAddress}
+                onChange={onChange}
+                onFocus={() => (mainAddress ? null : toggleFocus())}
+              />
+            </div>
+            {mainAddress ? (
+              <button className={Style.btn} onClick={toggleFocus}>
+                재검색
+              </button>
+            ) : (
+              ''
+            )}
           </div>
-          {mainAddress ? <button className={Style.btn}>재검색</button> : ''}
-        </div>
-        <div className={Style.inputWrapsInner}>
-          <div className={Style.inputWrap}>
-            <input
-              name="detailAddress"
-              className={Style.input}
-              type="text"
-              placeholder="상세 주소를 입력해주세요"
-              value={detailAddress}
-            />
+          <div className={Style.inputWrapsInner}>
+            <div className={Style.inputWrap}>
+              <input
+                name="detailAddress"
+                className={Style.input}
+                type="text"
+                placeholder="상세 주소를 입력해주세요"
+                value={detailAddress}
+                onChange={onChange}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      {focusing && (
+        <ModalPortal>
+          <AddressModal onClose={toggleFocus} />
+        </ModalPortal>
+      )}
+    </>
   );
 };
 

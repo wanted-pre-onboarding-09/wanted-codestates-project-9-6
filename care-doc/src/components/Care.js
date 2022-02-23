@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { nextStep, clearStep } from '../store/pageStep';
+import SubmitAddress from './SubmitAddress';
 
 const Care = () => {
   const { currentStep } = useSelector(({ pageStep }) => pageStep);
@@ -17,7 +18,7 @@ const Care = () => {
       case 2:
         return <div>component 2</div>;
       case 3:
-        return <div>component 3</div>;
+        return <SubmitAddress />;
       default:
         return <div>4이상임</div>;
     }

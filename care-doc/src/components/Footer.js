@@ -23,32 +23,31 @@ const Footer = () => {
 
   const navigate = useNavigate();
 
-  const moveToLast = () => {
-    const body = {
-      address: {
-        locationCode: '11',
-        roadCode: '11',
-        roadAddress: '11',
-        jibunAddress: '11',
-        sidoName: '11',
-        sigunguName: '11',
-        myundongName: '11',
-        liName: 's11',
-        addressDetail: '11',
-      },
-      phoneNumber: '11',
-      schedule: {
-        startDate: '11',
-        endDate: '11',
-        visitTime: '11',
-        hour: 0,
-      },
-      workType: 'TIME',
-    };
+  const body = {
+    address: {
+      locationCode: address.locationCode,
+      roadCode: address.roadCode,
+      roadAddress: address.roadAddress,
+      jibunAddress: address.jibunAddress,
+      sidoName: address.sidoName,
+      sigunguName: address.sigunguName,
+      myundongName: address.myundongName,
+      liName: address.liName,
+      addressDetail: address.addressDetail,
+    },
+    phoneNumber: currentPhone,
+    schedule: {
+      startDate: '2022-02-22',
+      endDate: '2022-02-23',
+      visitTime: '11',
+      hour: 3,
+    },
+    workType: currentCareType,
+  };
 
-    axios
-      .post('https://caredoc-fe-server.herokuapp.com/application', body)
-      .then((res) => console.log(res));
+  const moveToLast = () => {
+    axios.post('https://caredoc-fe-server.herokuapp.com/application', body);
+
     navigate('/care/final');
   };
 

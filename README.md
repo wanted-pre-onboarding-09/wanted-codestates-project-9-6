@@ -20,6 +20,42 @@ https://caredoc.netlify.app/
 | 이지수 | Team member |
 | 조영제 | Team member |
 
+
+손영산
+
+- 무엇을 구현했나?
+    - 주소 검색 API를 사용해 데이터 페칭 구현
+    - 서버 API에 보내야할 주소 관련 schema 구조를 redux store를 통한 상태 관리
+- 무엇이 어려웠나?
+    - `SbumitAddress` 컴포넌트의 input의 value와 `AddressModal` 컴포넌트의 input의 value를 redux에서 관리를 해야할 필요가 느껴졌는데, 각각 독립적인 컴포넌트의 input이라 하나의 form으로 관리할 수 있을지 확신이 서지 않아 리액트 훅으로 따로 관리하게 됨
+    - 빠르게 기능을 적용하려고 잦은 props dlling으로 데이터 흐름을 이해하는데 어려움이 있었기 때문에 리덕스를 활용해 리팩터링이 필요하다고 재고됨
+
+서한석
+
+- 돌봄 스케줄 예약 캘린더 기능 구현
+
+유송현
+
+- 메인 페이지
+- 돌봄 유형 설정 페이지
+- footer 버튼 영역 
+
+윤솔비
+
+- header 구현
+- 신청 완료 페이지 구현
+- 신청 완료 API POST 전송
+
+이지수
+
+- 입력 정보 확인 페이지
+- 입력한 전화번호를 redux 통한 상태관리
+
+조영제
+
+- 시간 예약 페이지 
+  - 페이지 레이아웃 구현
+
 ## 4. 기술 스택
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
